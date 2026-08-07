@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — AI Career Connect{% endblock %}
+
+{% block extra_css %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4"><i class="bi bi-bar-chart me-2"></i>Dashboard</h2>
+
+    <!-- Stat Cards -->
+    <div class="row g-4 mb-4">
+        <div class="col-md-4">
+            <div class="card stat-card text-center p-4">
+                <i class="bi bi-people-fill stat-icon text-primary"></i>
+                <h3 id="stat-users" class="mt-2">—</h3>
+                <p class="text-muted mb-0">Total Users</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card stat-card text-center p-4">
+                <i class="bi bi-chat-square-text-fill stat-icon text-success"></i>
+                <h3 id="stat-conversations" class="mt-2">—</h3>
+                <p class="text-muted mb-0">Conversations</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card stat-card text-center p-4">
+                <i class="bi bi-envelope-fill stat-icon text-warning"></i>
+                <h3 id="stat-messages" class="mt-2">—</h3>
+                <p class="text-muted mb-0">Messages</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card p-4">
+                <h5>Conversations by Category</h5>
+                <canvas id="category-chart"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-4">
+                <h5>Recent Conversations</h5>
+                <ul class="list-group list-group-flush" id="recent-list">
+                    <li class="list-group-item text-muted">Loading...</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

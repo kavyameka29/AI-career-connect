@@ -1,0 +1,21 @@
+# ── AI Career Connect — Python Dependencies ─────────────────
+
+# Core Framework
+Flask==3.1.1
+Flask-SQLAlchemy==3.1.1
+Flask-Migrate==4.1.0
+
+# Environment Variables
+python-dotenv==1.1.0
+
+# AI Integration
+mistralai==1.6.0
+
+# Speech
+SpeechRecognition==3.14.1
+pyttsx3==2.98
+gTTS==2.5.4
+PyAudio==0.2.14
+
+# Testing
+pytest==8.3.4

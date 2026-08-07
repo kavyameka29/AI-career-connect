@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Login — AI Career Connect{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="login-wrapper">
+    <!-- Animated background particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="login-container">
+        <!-- Glassmorphism Card -->
+        <div class="login-card">
+            <!-- Logo / Brand -->
+            <div class="login-brand">
+                <div class="brand-icon">
+                    <i class="bi bi-rocket-takeoff-fill"></i>
+                </div>
+                <h1 class="login-title">AI Career Connect</h1>
+                <p class="login-subtitle">Sign in to supercharge your career</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="login-form" novalidate>
+                <!-- Email Field -->
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="bi bi-envelope-fill input-icon"></i>
+                        <input 
+                            type="email" 
+                            id="login-email" 
+                            class="form-input" 
+                            placeholder="Email address"
+                            autocomplete="email"
+                            required
+                        >
+                        <div class="input-focus-border"></div>
+                    </div>
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+
+                <!-- Password Field -->
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <i class="bi bi-lock-fill input-icon"></i>
+                        <input 
+                            type="password" 
+                            id="login-password" 
+                            class="form-input" 
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button type="button" class="toggle-password" id="toggle-password" aria-label="Toggle password visibility">
+                            <i class="bi bi-eye-fill"></i>
+                        </button>
+                        <div class="input-focus-border"></div>
+                    </div>
+                    <span class="error-msg" id="password-error"></span>
+                </div>
+
+                <!-- Remember + Forgot -->
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="btn-login" id="btn-login">
+                    <span class="btn-text">Sign In</span>
+                    <span class="btn-loader" id="btn-loader">
+                        <i class="bi bi-arrow-repeat spin"></i>
+                    </span>
+                </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+            <!-- Social Buttons -->
+            <div class="social-buttons">
+                <button class="btn-social" aria-label="Sign in with Google">
+                    <i class="bi bi-google"></i>
+                </button>
+                <button class="btn-social" aria-label="Sign in with GitHub">
+                    <i class="bi bi-github"></i>
+                </button>
+                <button class="btn-social" aria-label="Sign in with LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </button>
+            </div>
+
+            <!-- Sign Up Link -->
+            <p class="signup-text">
+                Don't have an account? <a href="#" class="signup-link">Create one</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
