@@ -1,0 +1,19 @@
+Project Name:AI career connect
+
+1.chat with AI
+2.career question to using voice
+3.resume suggestion
+4.get interview questions
+5.store conversation in  db
+6.convert speech to text -->text --speech
+7.text to speech
+
+Techstack:
+backend -->flask
+frontend -->html,css,js
+AI model -->mistral API
+Database -->SQL.lite
+ORM -->SQLAlchemy
+speech to text -->speechrecognition
+styling -->bootstrap
+AL coding -->antigravity - claude opus.
