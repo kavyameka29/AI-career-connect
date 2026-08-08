@@ -18,11 +18,12 @@ class Config:
     # Flask core
     SECRET_KEY = os.environ.get("SECRET_KEY", "dev-secret-key-change-in-production")
 
-    # SQLite Database
+    # Database configuration (supports SQLite locally, PostgreSQL on Render)
     BASEDIR = os.path.abspath(os.path.dirname(__file__))
-    SQLALCHEMY_DATABASE_URI = os.environ.get(
-        "DATABASE_URL", f"sqlite:///{os.path.join(BASEDIR, 'instance', 'ai_career_connect.db')}"
-    )
+    _database_url = os.environ.get("DATABASE_URL")
+    if _database_url and _database_url.startswith("postgres://"):
+        _database_url = _database_url.replace("postgres://", "postgresql://", 1)
+    SQLALCHEMY_DATABASE_URI = _database_url or f"sqlite:///{os.path.join(BASEDIR, 'instance', 'ai_career_connect.db')}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Mistral AI API
